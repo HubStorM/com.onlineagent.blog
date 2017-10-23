@@ -4,7 +4,7 @@ zookeeper:
   serviceRoot: "service"
   defaultGroupNode: "/defaultGroup"
 
-apiGateway:
+apiGateWay:
  -
   ip: "localhost"
   port: "8000"
