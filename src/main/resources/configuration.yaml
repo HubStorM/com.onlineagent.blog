@@ -1,0 +1,26 @@
+zookeeper:
+  ip: "localhost"
+  port: "2181"
+  serviceRoot: "service"
+  defaultGroupNode: "/defaultGroup"
+
+apiGateway:
+ -
+  ip: "localhost"
+  port: "8000"
+  uri: "/api"
+ -
+  ip: "localhost"
+  port: "8001"
+  uri: "/api"
+
+module:
+  moduleName: "blog"
+  moduleUri: "/blog"
+  moduleIp: "localhost"
+  modulePort: "10000"
+  servicePackageName: "com.onlineagent.blog.service"
+  version: "v1.0"
+
+requiredModules:
+  - platform
