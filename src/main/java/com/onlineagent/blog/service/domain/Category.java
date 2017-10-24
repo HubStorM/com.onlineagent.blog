@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 /**
  * @author lijie
- * @date 2017/10/22 15:40
+ * @date 2017/10/24 21:36
  * @description
  */
 @Entity
@@ -17,7 +17,7 @@ public class Category {
     private String parentGuid;
 
     @Id
-    @Column(name = "categoryGuid")
+    @Column(name = "categoryGuid", nullable = false, length = 50)
     public String getCategoryGuid() {
         return categoryGuid;
     }
@@ -27,7 +27,7 @@ public class Category {
     }
 
     @Basic
-    @Column(name = "name")
+    @Column(name = "name", nullable = true, length = 50)
     public String getName() {
         return name;
     }
@@ -37,7 +37,7 @@ public class Category {
     }
 
     @Basic
-    @Column(name = "parentGuid")
+    @Column(name = "parentGuid", nullable = true, length = 50)
     public String getParentGuid() {
         return parentGuid;
     }

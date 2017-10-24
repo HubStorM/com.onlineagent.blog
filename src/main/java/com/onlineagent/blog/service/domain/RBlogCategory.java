@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 /**
  * @author lijie
- * @date 2017/10/22 15:40
+ * @date 2017/10/24 21:36
  * @description
  */
 @Entity
@@ -15,7 +15,7 @@ public class RBlogCategory {
     private String categoryGuid;
 
     @Id
-    @Column(name = "rowGuid")
+    @Column(name = "rowGuid", nullable = false, length = 50)
     public String getRowGuid() {
         return rowGuid;
     }
@@ -25,7 +25,7 @@ public class RBlogCategory {
     }
 
     @Basic
-    @Column(name = "blogGuid")
+    @Column(name = "blogGuid", nullable = true, length = 50)
     public String getBlogGuid() {
         return blogGuid;
     }
@@ -35,7 +35,7 @@ public class RBlogCategory {
     }
 
     @Basic
-    @Column(name = "categoryGuid")
+    @Column(name = "categoryGuid", nullable = true, length = 50)
     public String getCategoryGuid() {
         return categoryGuid;
     }

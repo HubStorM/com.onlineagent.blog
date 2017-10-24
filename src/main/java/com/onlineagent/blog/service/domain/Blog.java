@@ -1,14 +1,11 @@
 package com.onlineagent.blog.service.domain;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
  * @author lijie
- * @date 2017/10/22 15:40
+ * @date 2017/10/24 21:36
  * @description
  */
 @Entity
@@ -22,7 +19,7 @@ public class Blog {
     private Integer viewCount;
 
     @Id
-    @Column(name = "blogGuid")
+    @Column(name = "blogGuid", nullable = false, length = 50)
     public String getBlogGuid() {
         return blogGuid;
     }
@@ -32,7 +29,7 @@ public class Blog {
     }
 
     @Basic
-    @Column(name = "title")
+    @Column(name = "title", nullable = true, length = 50)
     public String getTitle() {
         return title;
     }
@@ -42,7 +39,7 @@ public class Blog {
     }
 
     @Basic
-    @Column(name = "content")
+    @Column(name = "content", nullable = true, length = -1)
     public String getContent() {
         return content;
     }
@@ -52,7 +49,7 @@ public class Blog {
     }
 
     @Basic
-    @Column(name = "html")
+    @Column(name = "html", nullable = true, length = -1)
     public String getHtml() {
         return html;
     }
@@ -62,7 +59,7 @@ public class Blog {
     }
 
     @Basic
-    @Column(name = "createDate")
+    @Column(name = "createDate", nullable = true)
     public Timestamp getCreateDate() {
         return createDate;
     }
@@ -72,7 +69,7 @@ public class Blog {
     }
 
     @Basic
-    @Column(name = "author")
+    @Column(name = "author", nullable = true, length = 50)
     public String getAuthor() {
         return author;
     }
@@ -82,7 +79,7 @@ public class Blog {
     }
 
     @Basic
-    @Column(name = "viewCount")
+    @Column(name = "viewCount", nullable = true)
     public Integer getViewCount() {
         return viewCount;
     }
@@ -119,5 +116,18 @@ public class Blog {
         result = 31 * result + (author != null ? author.hashCode() : 0);
         result = 31 * result + (viewCount != null ? viewCount.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Blog{" +
+                "blogGuid='" + blogGuid + '\'' +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", html='" + html + '\'' +
+                ", createDate=" + createDate +
+                ", author='" + author + '\'' +
+                ", viewCount=" + viewCount +
+                '}';
     }
 }
