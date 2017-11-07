@@ -6,6 +6,8 @@ import com.framex.persistence.dao.jdbc.JdbcDaoFactory;
 import com.onlineagent.blog.service.api.BlogService;
 import com.onlineagent.blog.service.domain.Blog;
 
+import java.util.List;
+
 /**
  * @author lijie
  * @date 2017/10/29 22:00
@@ -16,8 +18,18 @@ public class BlogServiceImpl implements BlogService {
     private static JdbcDao dao = JdbcDaoFactory.getDao(DaoTypeEnum.SINGLETON);
 
     @Override
-    public Blog get(String rowGuid) {
+    public Blog find(String rowGuid) {
         return dao.findObject(Blog.class, rowGuid);
+    }
+
+    @Override
+    public List<Blog> findList() {
+        return dao.findList(Blog.class);
+    }
+
+    @Override
+    public List<Blog> findList(int currentPage, int pageSize) {
+        return dao.findList(currentPage, pageSize, Blog.class);
     }
 
     @Override
