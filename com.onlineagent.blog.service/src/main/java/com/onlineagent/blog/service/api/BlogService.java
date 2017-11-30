@@ -9,6 +9,7 @@ import java.util.List;
  * @date 2017/10/22 15:27
  * @description
  */
+
 public interface BlogService {
 
     Blog find(String rowGuid);

@@ -1,4 +1,4 @@
-package com.onlineagent.blog.service.impl;
+package com.onlineagent.blog.implement;
 
 import com.framex.persistence.dao.DaoTypeEnum;
 import com.framex.persistence.dao.jdbc.JdbcDao;
