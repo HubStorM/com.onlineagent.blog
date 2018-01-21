@@ -1,7 +1,7 @@
 zookeeper:
-  ip: "localhost"
+  ip: "192.168.211.4"
   port: "2181"
-  serviceRoot: "service"
+  serviceRoot: "/service"
   defaultGroupNode: "/defaultGroup"
 
 apiGateWay:
@@ -19,7 +19,8 @@ module:
   moduleUri: "/blog"
   moduleIp: "localhost"
   modulePort: "10000"
-  servicePackageName: "com.onlineagent.blog.service"
+  rpcPort: "10086"
+  servicePackageName: "com.onlineagent.blog"
   version: "v1.0"
 
 requiredModules:

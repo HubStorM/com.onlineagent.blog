@@ -12,21 +12,17 @@
         <module>com.onlineagent.blog.implement</module>
         <module>com.onlineagent.blog.service</module>
     </modules>
-    <dependencies>
-        <dependency>
-            <artifactId>framex</artifactId>
-            <groupId>com.framex</groupId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <artifactId>framex</artifactId>
+                <groupId>com.framex</groupId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-        <dependency>
-            <groupId>org.reflections</groupId>
-            <artifactId>reflections</artifactId>
-            <version>0.9.11</version>
-        </dependency>
-
-    </dependencies>
 
     <build>
         <plugins>

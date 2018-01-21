@@ -3,6 +3,7 @@ package com.onlineagent.blog.implement;
 import com.framex.persistence.dao.DaoTypeEnum;
 import com.framex.persistence.dao.jdbc.JdbcDao;
 import com.framex.persistence.dao.jdbc.JdbcDaoFactory;
+import com.framex.soa.service.Service;
 import com.onlineagent.blog.service.api.BlogService;
 import com.onlineagent.blog.service.domain.Blog;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * @date 2017/10/29 22:00
  * @description
  */
+@Service(target = BlogService.class, name = "BlogService", version = "v1.0")
 public class BlogServiceImpl implements BlogService {
 
     private static JdbcDao dao = JdbcDaoFactory.getDao(DaoTypeEnum.SINGLETON);
